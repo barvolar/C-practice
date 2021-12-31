@@ -81,12 +81,12 @@ namespace SuperMarket
 
         public int SumBuy { get; private set; }
 
-        public Human(List<Product> allproducts)
+        public Human(List<Product> allProducts)
         {
             _isBuy = SumBuy <= _moneyValue;
             SumBuy = 0;
             _bag = new List<Product>();
-            _allProducts = allproducts;
+            _allProducts = allProducts;
             CreateBag();
             CreateMoney();
         }
