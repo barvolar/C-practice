@@ -1,0 +1,16 @@
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\SuperMarket.exe
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\SuperMarket.deps.json
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\SuperMarket.runtimeconfig.json
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\SuperMarket.runtimeconfig.dev.json
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\SuperMarket.dll
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\ref\SuperMarket.dll
+E:\Repositor\SuperMarket\SuperMarket\bin\Debug\net5.0\SuperMarket.pdb
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.AssemblyInfoInputs.cache
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.AssemblyInfo.cs
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.csproj.CoreCompileInputs.cache
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.dll
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\ref\SuperMarket.dll
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.pdb
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.genruntimeconfig.cache
+E:\Repositor\SuperMarket\SuperMarket\obj\Debug\net5.0\SuperMarket.csproj.AssemblyReference.cache
