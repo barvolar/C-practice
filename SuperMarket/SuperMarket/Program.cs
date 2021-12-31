@@ -8,7 +8,7 @@ namespace SuperMarket
         static void Main(string[] args)
         {
             Shop shop = new Shop();           
-            shop.ShopOperation();
+            shop.SellProducts();
         }
     }
 
@@ -27,7 +27,7 @@ namespace SuperMarket
             CreateQueue();
         }
 
-        public void ShopOperation()
+        public void SellProducts()
         {
             foreach (var human in _queue)
             {
