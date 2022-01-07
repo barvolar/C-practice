@@ -15,12 +15,12 @@ namespace SuperMarket1
     class Shop
     {
         private List<Product> _products;
-        private Queue<Human> _humans;
+        private List<Human> _humans;
         private int _gain;
 
         public Shop()
         {
-            _humans = new Queue<Human>();
+            _humans = new List<Human>();
             _products = new List<Product>();
             _gain = 0;
             CreateProducts();
@@ -31,7 +31,7 @@ namespace SuperMarket1
         {
             foreach (var human in _humans)
             {
-                human.BuyProduct();
+                human.EditBag();
                 human.ShowInfo();
                 _gain += human.SumProducts;               
             }
@@ -47,13 +47,13 @@ namespace SuperMarket1
             {
                 for (int i = 0; i < humansCount; i++)
                 {
-                    _humans.Enqueue(new Human(_products));
+                    _humans.Add(new Human(_products));
                 }
             }
             else
             {
                 Console.WriteLine("Ошибка ввода , в очереди 1 человек");
-                _humans.Enqueue(new Human(_products));
+                _humans.Add(new Human(_products));
             }
         }
 
@@ -86,7 +86,7 @@ namespace SuperMarket1
             CreateBag(products);
         }
 
-        public void BuyProduct()
+        public void EditBag()
         {
             while(_money < SumProducts)
             {
