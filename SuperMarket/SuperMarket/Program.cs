@@ -7,7 +7,7 @@ namespace SuperMarket
     {
         static void Main(string[] args)
         {
-            Shop shop = new Shop();           
+            Shop shop = new Shop();
             shop.SellProducts();
         }
     }
@@ -31,9 +31,11 @@ namespace SuperMarket
         {
             foreach (var human in _queue)
             {
+                //human.BuyHandler();
+                //_shopMoney += human.SumBuy;
                 human.BuyHandler();
-                _shopMoney += human.SumBuy;                
-            }          
+                _shopMoney += human.SumBuy;
+            }
 
             Console.WriteLine("Сегодна магазин заработал " + _shopMoney);
         }
@@ -57,7 +59,7 @@ namespace SuperMarket
         {
             Console.WriteLine("Сколько человек в магазине ?");
 
-            if(Int32.TryParse(Console.ReadLine(), out int humanCount))
+            if (Int32.TryParse(Console.ReadLine(), out int humanCount))
             {
                 for (int i = 0; i < humanCount; i++)
                 {
@@ -76,7 +78,7 @@ namespace SuperMarket
     {
         private List<Product> _bag;
         private List<Product> _allProducts;
-        private int _moneyValue;        
+        private int _moneyValue;
         private bool _isBuy;
 
         public int SumBuy { get; private set; }
@@ -97,36 +99,36 @@ namespace SuperMarket
             int indexProduct = random.Next(0, _bag.Count);
 
             while (!_isBuy)
-            {               
-                SumBuy -= _bag[indexProduct].Price;               
+            {
+                SumBuy -= _bag[indexProduct].Price;
                 _bag.RemoveAt(indexProduct);
-            }          
+            }
         }
 
         private void CreateBag()
         {
             int countProducts;
-            int maxProductsCount=20;
+            int maxProductsCount = 20;
             Random random = new Random();
             countProducts = random.Next(maxProductsCount);
 
             for (int i = 0; i < countProducts; i++)
-            {                
+            {
                 _bag.Add(_allProducts[random.Next(_allProducts.Count)]);
             }
 
-            foreach (Product product in _bag)
+            foreach (var product in _bag)
             {
-                SumBuy += product.Price;
+                //SumBuy += product.Price;
             }
         }
-        
+
         private void CreateMoney()
         {
             Random random = new Random();
             int maxMoney = 120;
             _moneyValue = random.Next(maxMoney);
-        }    
+        }
     }
 
     class Product
