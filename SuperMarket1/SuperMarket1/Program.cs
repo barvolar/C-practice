@@ -45,7 +45,6 @@ namespace SuperMarket1
 
             if (Int32.TryParse(Console.ReadLine(), out int humansCount))
             {
-
                 for (int i = 0; i < humansCount; i++)
                 {
                     _humans.Enqueue(new Human(_products));
