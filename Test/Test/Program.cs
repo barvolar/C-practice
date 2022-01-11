@@ -27,7 +27,6 @@ namespace Test
 
         public void Attack()
         {
-
             int oneFighterIndex = 0;
             int twoFighterIndex = 0;
             int roundIndex = 1;
