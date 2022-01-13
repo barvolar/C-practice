@@ -51,9 +51,7 @@ namespace Test
                 RemovingDeadFighters(_twoTeam);
 
                 ChekVictory();
-
-                Console.WriteLine("Для следующего раунда нажмите любую кнопку");
-
+               
                 roundIndex++;
             }
         }
