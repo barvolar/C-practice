@@ -51,7 +51,6 @@ namespace Aquarium
                     case "3":
                     default:
                         break;
-
                 }
                 Console.WriteLine("Для продолжения нажмите любую кнопку");
                 Console.ReadKey();
