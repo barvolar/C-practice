@@ -8,7 +8,7 @@ namespace Test
         static void Main(string[] args)
         {
             Battleground battleground = new Battleground();
-            battleground.Attack();
+            battleground.ProcessingBattle();
         }
     }
 
@@ -19,13 +19,11 @@ namespace Test
 
         public Battleground()
         {
-            _oneTeam = new List<Fighter>();
-            _twoTeam = new List<Fighter>();
-            CreateFighters(_oneTeam);
-            CreateFighters(_twoTeam);
+            _oneTeam = CreateFighters();
+            _twoTeam = CreateFighters();         
         }
 
-        public void Attack()
+        public void ProcessingBattle()
         {
             int oneFighterIndex = 0;
             int twoFighterIndex = 0;
@@ -43,16 +41,16 @@ namespace Test
                 if (twoFighterIndex >= _twoTeam.Count)
                     twoFighterIndex = 0;
 
-                _twoTeam[twoFighterIndex].TakeDamage(_oneTeam[oneFighterIndex]);
-                _oneTeam[oneFighterIndex].TakeDamage(_twoTeam[twoFighterIndex]);
+                _twoTeam[twoFighterIndex].TakeDamage(_oneTeam[oneFighterIndex].Damage);
+                _oneTeam[oneFighterIndex].TakeDamage(_twoTeam[twoFighterIndex].Damage);
 
                 oneFighterIndex++;
                 twoFighterIndex++;
 
-                TeamHandler(_oneTeam);
-                TeamHandler(_twoTeam);
+                RemovingDeadFighters(_oneTeam);
+                RemovingDeadFighters(_twoTeam);
 
-                WinHandler();
+                ChekVictory();
 
                 Console.WriteLine("Для следующего раунда нажмите любую кнопку");
 
@@ -60,7 +58,7 @@ namespace Test
             }
         }
 
-        private void WinHandler()
+        private void ChekVictory()
         {
             if (_oneTeam.Count <= 0)
             {
@@ -73,7 +71,7 @@ namespace Test
             }
         }
 
-        private void TeamHandler(List<Fighter> fighters)
+        private void RemovingDeadFighters(List<Fighter> fighters)
         {
             for (int i = 0; i < fighters.Count; i++)
             {
@@ -81,15 +79,16 @@ namespace Test
                     fighters.RemoveAt(i);
             }
         }
-
-        private void CreateFighters(List<Fighter> fighters)
+    
+        private List<Fighter> CreateFighters()
         {
+            List<Fighter> fighters = new List<Fighter>();
             int teamSize = 50;
 
             for (int i = 0; i < teamSize; i++)
-            {
                 fighters.Add(new Fighter());
-            }
+
+            return fighters;
         }
 
         private void ShowInfo()
@@ -112,10 +111,10 @@ namespace Test
             _random = new Random();
             CreateStats();
         }
-
-        public void TakeDamage(Fighter fighter)
+        
+        public void TakeDamage(int damageValue)
         {
-            Health -= fighter.Damage / _armor;
+            Health -= damageValue / _armor;
         }
 
         private void CreateStats()
