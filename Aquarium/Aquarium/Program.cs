@@ -15,7 +15,6 @@ namespace Aquarium
     class Aquarium
     {
         private List<Fish> _fish;
-        private int _maxAgeFish;
         private int _maxFishCount;
         private int _fishNumber;
         private bool _isWork;
@@ -24,7 +23,6 @@ namespace Aquarium
         {
             _fish = new List<Fish>();
             _isWork = true;
-            _maxAgeFish = 70;
             _maxFishCount = 10;
             _fishNumber = 1;
         }
@@ -67,7 +65,8 @@ namespace Aquarium
             for (int i = 0; i < _fish.Count; i++)
             {
                 _fish[i].IncreasingAge();
-                if (_fish[i].Age > _maxAgeFish)
+
+                if (_fish[i].IsDead)
                     _fish.RemoveAt(i);
             }
         }
@@ -134,30 +133,37 @@ namespace Aquarium
     class Fish
     {
         private Random _random;
-        private int _minAge;
         private int _maxAge;
+        private int _age;
 
         public int FishNumber { get; private set; }
-
-        public int Age { get; private set; }
+        public bool IsDead => _age > _maxAge;
 
         public Fish(int fishNumber)
         {
             _random = new Random();
-            _minAge = 1;
-            _maxAge = 7;
-            Age = _random.Next(_minAge, _maxAge);
+            _maxAge = 25;
+            _age = CreateAge();
             AssignFishNumber(fishNumber);
         }
 
         public void IncreasingAge()
         {
-            Age++;
+            _age++;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Житель аквариума № {FishNumber} возраст рыбки - {Age}");
+            Console.WriteLine($"Житель аквариума № {FishNumber} возраст рыбки - {_age}");
+        }
+
+        private int CreateAge()
+        {
+            int minAge = 1;
+            int maxAge = 7;
+            int age = _random.Next(minAge, maxAge);
+
+            return age;
         }
 
         private void AssignFishNumber(int value)
