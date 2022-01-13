@@ -95,9 +95,7 @@ namespace Aquarium
                 for (int i = 0; i < _fish.Count; i++)
                 {
                     if (_fish[i].FishNumber == valueInput)
-                    {
                         _fish.RemoveAt(i);
-                    }
                 }
 
                 if (tempFishCount == _fish.Count)
