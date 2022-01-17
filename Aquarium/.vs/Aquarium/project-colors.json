@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c5a781c8-2b07-4f67-b72e-dd4393767226": {
+      "ProjectGuid": "c5a781c8-2b07-4f67-b72e-dd4393767226",
+      "DisplayName": "Aquarium",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
