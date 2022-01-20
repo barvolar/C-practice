@@ -1,0 +1,16 @@
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\Zoo1.exe
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\Zoo1.deps.json
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\Zoo1.runtimeconfig.json
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\Zoo1.runtimeconfig.dev.json
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\Zoo1.dll
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\ref\Zoo1.dll
+E:\Repositor\Zoo1\Zoo1\bin\Debug\net5.0\Zoo1.pdb
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.csproj.AssemblyReference.cache
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.AssemblyInfoInputs.cache
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.AssemblyInfo.cs
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.csproj.CoreCompileInputs.cache
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.dll
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\ref\Zoo1.dll
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.pdb
+E:\Repositor\Zoo1\Zoo1\obj\Debug\net5.0\Zoo1.genruntimeconfig.cache
