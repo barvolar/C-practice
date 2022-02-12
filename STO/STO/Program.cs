@@ -11,7 +11,6 @@ namespace STO
             workshop.Work();
         }
 
-
         class Workshop
         {
             private List<Component> _components;
@@ -19,17 +18,14 @@ namespace STO
             private Random _random;
             private int _money;
             private int _numberClient;
-
-            private bool _isWork;
-
+         
             public Workshop()
-            {
-                _isWork = true;
+            {         
                 _money = 0;
                 _numberClient = 0;
                 _random = new Random();
                 _components = new List<Component>();
-                Create();
+                CreateComponents();
                 _cars = CreateCars();
             }
 
@@ -42,69 +38,73 @@ namespace STO
 
                     while (car.CheckDefect())
                     {
+                        Console.Clear();
                         Console.WriteLine("Клиент номер - " + _numberClient);
-
                         Console.WriteLine($"Количество клиентов - {_cars.Count}\nЗаработано денег - {_money}");
 
                         car.ShowInfo();
 
-                        Console.WriteLine("Введите название детали для ремонат \nДля завершения работы введите Exit\nДля отказа клиенту введите Next");
+                        Console.WriteLine("====================\nВведите название детали для ремонат \nДля завершения работы введите Exit\nДля отказа клиенту введите Next");
 
-                        Component componentForRepair = null;
-                        string nameComponent = Console.ReadLine();
+                        Component componentForRepair = new Component();
+                        string inputUser = Console.ReadLine();
 
-                        if (nameComponent == "Next")
+                        if (inputUser == "Next")
                         {
                             Console.WriteLine("Вы отказали клиенту и вам пришлось заплатить компенсацию");
-                            _money = car.TakeMoney();
+                            _money -= car.CalculatePenalty();
                             break;
                         }
 
-                        if (nameComponent == "Exit")
+                        if (inputUser == "Exit")
                         {
                             _cars.Clear();
                             break;
                         }
 
 
-                        if (car.CheckComponentDefect(nameComponent))
-                        {
-                            for (int i = 0; i < _components.Count; i++)
-                            {
-                                if (nameComponent == _components[i].Name)
-                                {
-                                    componentForRepair = _components[i];
-                                    _money += car.Repair(componentForRepair);
-                                    _components.RemoveAt(i);
-                                    componentForRepair = null;
-                                    break;
-
-                                }
-                                if (componentForRepair == null)
-                                {
-                                    Console.WriteLine("У вас нет такой детали");                                   
-                                    Console.ReadKey();
-                                }
-                            }
-
-
+                        if (car.CheckComponentDefect(inputUser))
+                        {                         
+                            RepairHandler(inputUser, car, componentForRepair);
                         }
+
                         else
                             Console.WriteLine("Этот компонент не повреждён");
 
-
-
                         Console.Clear();
                     }
-
-
-
-                }
-                Console.Clear();
+                }              
                 Console.WriteLine($"Сегодня вы обслужили {_numberClient} клиентов и заработали {_money}");
             }
 
+            private void RepairHandler(string nameComponent, Car car, Component component)
+            {
+                if (car.CheckComponentDefect(nameComponent))
+                {
+                    for (int i = 0; i < _components.Count; i++)
+                    {
+                        if (nameComponent == _components[i].Name)
+                        {
+                            component = _components[i];
+                            _money += car.Repair(component);
+                            _components.RemoveAt(i);
+                            Console.WriteLine("Успешный ремонт");
+                            break;
 
+                        }
+
+                        if (component == null)
+                        {
+                            Console.WriteLine("У вас нет такой детали");
+                        }
+
+                        component = null;
+                    }
+
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
 
             private Queue<Car> CreateCars()
             {
@@ -121,12 +121,12 @@ namespace STO
                 return cars;
             }
 
-            private void Create()
+            private void CreateComponents()
             {
                 AllComponents allComponents = new AllComponents();
                 List<Component> tempComponents = allComponents.CreateComponents();
 
-                int maxComponents = 2;
+                int maxComponents = 40;
 
                 for (int i = 0; i < maxComponents; i++)
                 {
@@ -143,17 +143,15 @@ namespace STO
             private int _repairsPrice;
             private Random _random;
 
-
-
             public Car()
             {
                 _random = new Random();
                 _allComponents = new AllComponents();
                 _carComponents = _allComponents.CreateComponents();
-                Create();
+                CreateRepairsPrice();
             }
 
-            public int TakeMoney()
+            public int CalculatePenalty()
             {
                 int penaltyCount = 0;
 
@@ -169,6 +167,7 @@ namespace STO
             public bool CheckComponentDefect(string name)
             {
                 bool isDefect = false;
+
                 foreach (var component in _carComponents)
                 {
                     if (component.Name == name)
@@ -178,8 +177,10 @@ namespace STO
                         break;
                     }
                 }
+
                 return isDefect;
             }
+
             public int Repair(Component component)
             {
                 int repairPrice = 0;
@@ -192,7 +193,6 @@ namespace STO
                         _carComponents[i] = component;
 
                     }
-
                 }
 
                 return repairPrice;
@@ -200,7 +200,7 @@ namespace STO
 
             public void ShowInfo()
             {
-                Console.WriteLine($"Цена починки автомобиля {_repairsPrice}\nСостояние деталей:");
+                Console.WriteLine($"======\nЦена починки автомобиля {_repairsPrice}\nСостояние деталей:");
 
                 foreach (var component in _carComponents)
                 {
@@ -219,7 +219,7 @@ namespace STO
                 return isDefect;
             }
 
-            private void Create()
+            private void CreateRepairsPrice()
             {
                 int maxRepairsPrice = 900;
                 _repairsPrice = _random.Next(maxRepairsPrice);
@@ -258,6 +258,11 @@ namespace STO
                 Name = name;
                 Price = price;
                 Create();
+            }
+
+            public Component()
+            {
+
             }
 
             public void Repair()
