@@ -26,7 +26,8 @@ namespace STO
                 _random = new Random();
                 _components = new List<Component>();
                 CreateComponents();
-                _cars = CreateCars();
+                _cars = new Queue<Car>();
+                CreateCars();
             }
 
             public void Work()
@@ -46,7 +47,7 @@ namespace STO
 
                         Console.WriteLine("====================\nВведите название детали для ремонат \nДля завершения работы введите Exit\nДля отказа клиенту введите Next");
 
-                        Component componentForRepair = new Component();
+                        Component componentForRepair = null;
                         string inputUser = Console.ReadLine();
 
                         if (inputUser == "Next")
@@ -105,21 +106,17 @@ namespace STO
                 }
             }
 
-            private Queue<Car> CreateCars()
+            private void CreateCars()
             {
-                Queue<Car> cars = new Queue<Car>();
-
                 int maxCarsValue = 50;
                 int carsValue = _random.Next(maxCarsValue);
 
                 for (int i = 0; i < carsValue; i++)
                 {
-                    cars.Enqueue(new Car());
+                    _cars.Enqueue(new Car());
                 }
-
-                return cars;
             }
-
+           
             private void CreateComponents()
             {
                 AllComponents allComponents = new AllComponents();
@@ -258,12 +255,7 @@ namespace STO
                 Price = price;
                 Create();
             }
-
-            public Component()
-            {
-
-            }
-
+        
             public void Repair()
             {
                 Defect = false;
