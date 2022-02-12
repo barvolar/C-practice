@@ -1,0 +1,16 @@
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\Auto.exe
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\Auto.deps.json
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\Auto.runtimeconfig.json
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\Auto.runtimeconfig.dev.json
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\Auto.dll
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\ref\Auto.dll
+E:\Repositor\Auto\Auto\bin\Debug\net5.0\Auto.pdb
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.csproj.AssemblyReference.cache
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.AssemblyInfoInputs.cache
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.AssemblyInfo.cs
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.csproj.CoreCompileInputs.cache
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.dll
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\ref\Auto.dll
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.pdb
+E:\Repositor\Auto\Auto\obj\Debug\net5.0\Auto.genruntimeconfig.cache

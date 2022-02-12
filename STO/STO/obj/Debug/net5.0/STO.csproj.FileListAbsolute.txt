@@ -1,0 +1,16 @@
+E:\Repositor\STO\STO\bin\Debug\net5.0\STO.exe
+E:\Repositor\STO\STO\bin\Debug\net5.0\STO.deps.json
+E:\Repositor\STO\STO\bin\Debug\net5.0\STO.runtimeconfig.json
+E:\Repositor\STO\STO\bin\Debug\net5.0\STO.runtimeconfig.dev.json
+E:\Repositor\STO\STO\bin\Debug\net5.0\STO.dll
+E:\Repositor\STO\STO\bin\Debug\net5.0\ref\STO.dll
+E:\Repositor\STO\STO\bin\Debug\net5.0\STO.pdb
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.csproj.AssemblyReference.cache
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.AssemblyInfoInputs.cache
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.AssemblyInfo.cs
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.csproj.CoreCompileInputs.cache
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.dll
+E:\Repositor\STO\STO\obj\Debug\net5.0\ref\STO.dll
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.pdb
+E:\Repositor\STO\STO\obj\Debug\net5.0\STO.genruntimeconfig.cache
