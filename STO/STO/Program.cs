@@ -90,7 +90,6 @@ namespace STO
                             _components.RemoveAt(i);
                             Console.WriteLine("Успешный ремонт");
                             break;
-
                         }
 
                         if (component == null)
