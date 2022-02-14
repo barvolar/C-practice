@@ -33,8 +33,7 @@ namespace FindTheGansta
         public void Work()
         {
             while (_isWork)
-            {
-                
+            {             
                 Console.WriteLine($"Добро пожаловать в вашей базе данных {_offenders.Count} человек");
                 Console.WriteLine($"======\n1: Показать всех\n2: Найти человека по 3 параметрам\n3: Найти человека по 1 параметру\n4: Выход");
 
@@ -136,6 +135,7 @@ namespace FindTheGansta
             InputInfoHandler(out _requestedAge);
 
             var result = _offenders.Where(offendr => offendr.Height == _requestedHeight && offendr.Weight == _requestedWeight && offendr.Age == _requestedAge && offendr.IsArrested == false);
+    
             if (result.Count() > 0)
             {
                 foreach (var offender in result)
@@ -149,10 +149,11 @@ namespace FindTheGansta
         private void InputInfoHandler(out int valueType )
         {
             string userInput = Console.ReadLine();
+
             if(Int32.TryParse(userInput,out valueType))           
                 Console.WriteLine("Значиение принято");
-            else { InputInfoHandler(out valueType); }
-            
+
+            else { InputInfoHandler(out valueType); }           
         }
 
         private void CreateOffenders(int maxOffendersCount)
@@ -214,8 +215,10 @@ namespace FindTheGansta
         {
             int arrestedIndex = 3;
             int maxIndex = 4;
+
             if (_random.Next(maxIndex) == arrestedIndex)
                 IsArrested = true;
+
             else
                 IsArrested = false;
         }     
@@ -291,8 +294,5 @@ namespace FindTheGansta
         }
     }
 
-    //У нас есть список всех преступников.
-    //В преступнике есть поля: ФИО, заключен ли он под стражу, рост, вес, национальность.
-    //Вашей программой будут пользоваться детективы.
-    //У детектива запрашиваются данные(рост, вес, национальность), и детективу выводятся все преступники, которые подходят под эти параметры, но уже заключенные под стражу выводиться не должны.
+  
 }
