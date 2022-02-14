@@ -1,0 +1,16 @@
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\FindTheGansta.exe
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\FindTheGansta.deps.json
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\FindTheGansta.runtimeconfig.json
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\FindTheGansta.runtimeconfig.dev.json
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\FindTheGansta.dll
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\ref\FindTheGansta.dll
+E:\Repositor\FindTheGansta\FindTheGansta\bin\Debug\net5.0\FindTheGansta.pdb
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.csproj.AssemblyReference.cache
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.AssemblyInfoInputs.cache
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.AssemblyInfo.cs
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.csproj.CoreCompileInputs.cache
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.dll
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\ref\FindTheGansta.dll
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.pdb
+E:\Repositor\FindTheGansta\FindTheGansta\obj\Debug\net5.0\FindTheGansta.genruntimeconfig.cache
