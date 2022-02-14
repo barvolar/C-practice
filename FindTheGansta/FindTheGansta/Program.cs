@@ -9,7 +9,7 @@ namespace FindTheGansta
         static void Main(string[] args)
         {
             Detective detective = new Detective();
-            //detective.Work();
+            detective.Work();
         }
     }
 
@@ -20,25 +20,23 @@ namespace FindTheGansta
         private int _requestedWeight;
         private int _requestedHeight;
         private int _requestedAge;
+        private int _maxOffenders;
 
         public Detective()
         {
+            _maxOffenders = 10000;
             _offenders = new List<Offender>();
             _isWork = true;
-            CreateOffenders(500);
-            //int input = Convert.ToInt32(Console.ReadLine());
-            string nameinput = Console.ReadLine();
-            var resul = _offenders.Where(offender => offender.Name==nameinput);
-            foreach (var offender in resul)
-                offender.ShowInfo();
+            CreateOffenders(_maxOffenders);         
         }
 
         public void Work()
         {
             while (_isWork)
             {
+                
                 Console.WriteLine($"Добро пожаловать в вашей базе данных {_offenders.Count} человек");
-                Console.WriteLine($"======\n1: Показать всех\n2: Добавить фильтр\n3: Выход");
+                Console.WriteLine($"======\n1: Показать всех\n2: Найти человека по 3 параметрам\n3: Найти человека по 1 параметру\n4: Выход");
 
                 switch (Console.ReadLine())
                 {
@@ -47,30 +45,86 @@ namespace FindTheGansta
                             offender.ShowInfo();
                         break;
                     case "2":
-                        Sort();
-                        var result = _offenders.Where(offendr => offendr.Height == _requestedHeight /*&& offendr.Weight==_requestedWeight&&offendr.Age==_requestedAge*/);
-                        foreach (var offender in result)
-                            offender.ShowInfo();
-
-                        Console.WriteLine(result.Count());
+                        FindOffendersThreeParameters();                      
                         break;
                     case "3":
+                        FindOffendersOneParameter();
+                        break;
+                    case "4":
                         _isWork = false;
                         break;
                 }
+                Console.WriteLine("Для продолжения нажмите кнопку");
+                Console.ReadKey();
+                Console.Clear();
             }
         }
-
-        private void SortHandler(out int valueType )
+          
+        private void FindOffendersOneParameter()
         {
-            string userInput = Console.ReadLine();
-            if(Int32.TryParse(userInput,out valueType))           
-                Console.WriteLine("Значиение принято");
-            else { userInput = Console.ReadLine(); }
-            
-        }
+            string userInput;
+            Console.WriteLine($"1: Найти по имени\n2: Найти по национальности\n3: Найти по росту\n4: Найти по весу\n5: Найти по возрасту");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.WriteLine("Введите имя");
+                    userInput = Console.ReadLine();
+                    var foundByName = _offenders.Where(offender => offender.Name == userInput && offender.IsArrested == false);
 
-        private void Sort()
+                    foreach (var offender in foundByName)
+                        offender.ShowInfo();
+                    break;
+                case "2":
+                    Console.WriteLine("Введите национальность");
+                    userInput = Console.ReadLine();
+                    var foundByNationality = _offenders.Where(offender => offender.Nationality == userInput && offender.IsArrested == false);
+
+                    foreach (var offender in foundByNationality)
+                        offender.ShowInfo();
+                    break;
+                case "3":
+                    Console.WriteLine("Введите рост");
+                    userInput = Console.ReadLine();
+                    if (Int32.TryParse(userInput, out int valueHeight))
+                    {
+                        var foundByHeight = _offenders.Where(offender => offender.Height == valueHeight && offender.IsArrested == false);
+
+                        foreach (var offender in foundByHeight)
+                            offender.ShowInfo();
+                    }
+                    else
+                        Console.WriteLine("Ошибка");
+                    break;
+                case "4":
+                    Console.WriteLine("Введите Вес");
+                    userInput = Console.ReadLine();
+                    if (Int32.TryParse(userInput, out int valueWeight))
+                    {
+                        var foundByWeight = _offenders.Where(offender => offender.Height == valueWeight && offender.IsArrested == false);
+
+                        foreach (var offender in foundByWeight)
+                            offender.ShowInfo();
+                    }
+                    else
+                        Console.WriteLine("Ошибка");
+                    break;
+                case "5":
+                    Console.WriteLine("Введите Возраст");
+                    userInput = Console.ReadLine();
+                    if (Int32.TryParse(userInput, out int valueAge))
+                    {
+                        var foundByAge = _offenders.Where(offender => offender.Height == valueAge && offender.IsArrested == false);
+
+                        foreach (var offender in foundByAge)
+                            offender.ShowInfo();
+                    }
+                    else
+                        Console.WriteLine("Ошибка");
+                    break;
+            }
+        }
+        
+        private void FindOffendersThreeParameters()
         {       
             Console.WriteLine("Укажите рост");
             SortHandler(out _requestedHeight);
@@ -80,6 +134,25 @@ namespace FindTheGansta
 
             Console.WriteLine("Укажите возраст");
             SortHandler(out _requestedAge);
+
+            var result = _offenders.Where(offendr => offendr.Height == _requestedHeight && offendr.Weight == _requestedWeight && offendr.Age == _requestedAge && offendr.IsArrested == false);
+            if (result.Count() > 0)
+            {
+                foreach (var offender in result)
+                    offender.ShowInfo();
+            }
+
+            else
+                Console.WriteLine("Человек с такими параметрами не найден");
+        }
+
+        private void SortHandler(out int valueType )
+        {
+            string userInput = Console.ReadLine();
+            if(Int32.TryParse(userInput,out valueType))           
+                Console.WriteLine("Значиение принято");
+            else { SortHandler(out valueType); }
+            
         }
 
         private void CreateOffenders(int maxOffendersCount)
@@ -91,20 +164,19 @@ namespace FindTheGansta
         }
     }
 
+
     class Offender
     {
         private NameDatabase _nameDatabase;
         private NationalityDatabase _nationalityDatabase;
         private Random _random;
 
-        public string Name { get => _nameDatabase.ReturnName(); }
-        public string Nationality { get => _nationalityDatabase.ReturnNationality(); }
-        public int Age { get => Create(14, 70); }
-        public int Weight { get => Create(40, 170); }
-        public int Height { get => Create(140, 220); }
+        public string Name { get; private set; }
+        public string Nationality { get; private set; }
+        public int Age { get; private set; }
+        public int Weight { get; private set; }
+        public int Height { get; private set; }
         public bool IsArrested { get; private set; }
-
-
 
         public Offender()
         {
@@ -112,11 +184,30 @@ namespace FindTheGansta
             _nationalityDatabase = new NationalityDatabase();
             _random = new Random();
             ArrestedHandler();
+            Create();
         }
 
         public void ShowInfo()
         {
             Console.WriteLine($"{Name} , {Nationality} , рост: {Height} , вес: {Weight} , возраст {Age} , находится под стражей {IsArrested}");
+        }
+
+        private void Create()
+        {
+            int minAgeValue = 14;
+            int maxAgeValue = 70;
+            Age = _random.Next(minAgeValue, maxAgeValue);
+
+            int minWeightValue = 50;
+            int maxWeightValue = 170;
+            Weight = _random.Next(minWeightValue, maxWeightValue);
+
+            int minHeightValue = 140;
+            int maxHeightValue = 220;
+            Height = _random.Next(minHeightValue, maxHeightValue);
+
+            Name = _nameDatabase.ReturnName();
+            Nationality = _nationalityDatabase.ReturnNationality();
         }
 
         private void ArrestedHandler()
@@ -127,15 +218,9 @@ namespace FindTheGansta
                 IsArrested = true;
             else
                 IsArrested = false;
-        }
-
-        private int Create(int minValue, int maxValue)
-        {
-            int result = _random.Next(minValue, maxValue);
-            return result;
-        }
-
+        }     
     }
+    
 
     class NameDatabase
     {
