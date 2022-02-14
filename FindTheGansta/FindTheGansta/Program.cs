@@ -127,13 +127,13 @@ namespace FindTheGansta
         private void FindOffendersThreeParameters()
         {       
             Console.WriteLine("Укажите рост");
-            SortHandler(out _requestedHeight);
+            InputInfoHandler(out _requestedHeight);
 
             Console.WriteLine("Укажите вес");
-            SortHandler(out _requestedWeight);
+            InputInfoHandler(out _requestedWeight);
 
             Console.WriteLine("Укажите возраст");
-            SortHandler(out _requestedAge);
+            InputInfoHandler(out _requestedAge);
 
             var result = _offenders.Where(offendr => offendr.Height == _requestedHeight && offendr.Weight == _requestedWeight && offendr.Age == _requestedAge && offendr.IsArrested == false);
             if (result.Count() > 0)
@@ -146,12 +146,12 @@ namespace FindTheGansta
                 Console.WriteLine("Человек с такими параметрами не найден");
         }
 
-        private void SortHandler(out int valueType )
+        private void InputInfoHandler(out int valueType )
         {
             string userInput = Console.ReadLine();
             if(Int32.TryParse(userInput,out valueType))           
                 Console.WriteLine("Значиение принято");
-            else { SortHandler(out valueType); }
+            else { InputInfoHandler(out valueType); }
             
         }
 
