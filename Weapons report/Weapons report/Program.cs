@@ -20,42 +20,14 @@ namespace Weapons_report
         public Battalion()
         {
             _soldiers = new List<Soldier>();
-            AddSoldiersToList(40);
+            AddSoldiersToList(40);            
         }
 
         public void Work()
-        {
-            Console.WriteLine("Показать всех:\n1) Автоматчиков\n2) Пистолетчиков\n3) Гранатометчиков\n4) Пулеметчиков\n5) Снайперов");
-
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    FindSoldiersByArms("Автомат");
-                    break;
-                case "2":
-                    FindSoldiersByArms("Пистолет");
-                    break;
-                case "3":
-                    FindSoldiersByArms("Гранатомет");
-                    break;
-                case "4":
-                    FindSoldiersByArms("Пулемет");
-                    break;
-                case "5":
-                    FindSoldiersByArms("Снайперская винтовка");
-                    break;
-                default:
-                    Console.WriteLine("Такого оружия у нас нет");
-                    break;
-            }
-        }
-
-        private void FindSoldiersByArms(string weaponType)
-        {
-            var soldiers = _soldiers.Where(soldier => soldier.Weapon == weaponType);
-
+        {       
+            var soldiers = _soldiers.Select(soldier=>soldier.Name+" - "+soldier.Rank);
             foreach (var soldier in soldiers)
-                soldier.ShowNameAndRank();
+                Console.WriteLine(soldier);
         }
 
         private void AddSoldiersToList(int soldiersCount)
