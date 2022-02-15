@@ -48,7 +48,6 @@ namespace Anarchy_in_the_hospital
                         case "4":
                             _isWork = false;
                             break;
-
                     }
                     Console.ReadKey();
                     Console.Clear();
@@ -62,7 +61,6 @@ namespace Anarchy_in_the_hospital
                 Console.WriteLine("======\nВведите название болезни");
 
                 string disease = Console.ReadLine();
-
                 var patients = _patients.Where(patient => patient.Disease == disease);
 
                 if (patients.Count() > 0)
@@ -122,7 +120,6 @@ namespace Anarchy_in_the_hospital
                 _diseaseDatabase = new DiseaseDatabase();
                 Disease = _diseaseDatabase.ReturnDisease();
                 CreateAge();
-
             }
 
             public void ShowInfo()
