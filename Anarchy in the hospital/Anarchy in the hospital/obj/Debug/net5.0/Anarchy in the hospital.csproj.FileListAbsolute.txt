@@ -1,0 +1,16 @@
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\Anarchy in the hospital.exe
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\Anarchy in the hospital.deps.json
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\Anarchy in the hospital.runtimeconfig.json
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\Anarchy in the hospital.runtimeconfig.dev.json
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\Anarchy in the hospital.dll
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\ref\Anarchy in the hospital.dll
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\bin\Debug\net5.0\Anarchy in the hospital.pdb
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.csproj.AssemblyReference.cache
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.AssemblyInfoInputs.cache
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.AssemblyInfo.cs
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.csproj.CoreCompileInputs.cache
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.dll
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\ref\Anarchy in the hospital.dll
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.pdb
+E:\Repositor\Anarchy in the hospital\Anarchy in the hospital\obj\Debug\net5.0\Anarchy in the hospital.genruntimeconfig.cache
