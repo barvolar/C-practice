@@ -9,7 +9,7 @@ namespace Weapons_report
         static void Main(string[] args)
         {
             Battalion battalion = new Battalion();
-            battalion.Work();
+            battalion.ShowNameAndRank();
         }
     }
 
@@ -23,7 +23,7 @@ namespace Weapons_report
             AddSoldiersToList(40);            
         }
 
-        public void Work()
+        public void ShowNameAndRank()
         {       
             var soldiers = _soldiers.Select(soldier=>soldier.Name+" - "+soldier.Rank);
             foreach (var soldier in soldiers)
@@ -62,12 +62,7 @@ namespace Weapons_report
             Weapon = _weaponDatabase.ReturnWeapon();
             CreatePeriodOfService();
         }
-
-        public void ShowNameAndRank()
-        {
-            Console.WriteLine($"{Name} звание {Rank} срок службы {PeriodOfService} мес.");
-        }
-
+      
         private void CreatePeriodOfService()
         {
             int minPeriodOfService = 3;
