@@ -90,31 +90,5 @@ namespace Definition_of_delay
 
             YearProduction = _random.Next(minYearCount, maxYearCount);
         }
-    }
-
-    class NameDatabase
-    {
-        private List<string> _names;
-        private Random _random;
-
-        public NameDatabase()
-        {
-            _random = new Random();
-            _names = new List<string>();
-        }
-
-        public void ReturnName()
-        {
-
-        }
-
-        private void Create()
-        {
-            _names.Add("Cуровая");
-        }
-    }
-
-    //Есть набор тушенки.У тушенки есть название, год производства и срок годности.
-    // Написать запрос для получения всех просроченных банок тушенки.
-    //Чтобы не заморачиваться, можете думать, что считаем только года, без месяцев.
+    }    
 }
