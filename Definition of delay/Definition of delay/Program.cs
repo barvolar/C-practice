@@ -10,7 +10,7 @@ namespace Definition_of_delay
         {
             Warehous warehous = new Warehous();
             warehous.ShowAllEat();
-            warehous.ShowSuitableEat(warehous.CheckExpirationDate());
+            warehous.ShowSuitableEat(warehous.CheckAndReturnExpirationDate());
         }
     }
 
@@ -21,6 +21,7 @@ namespace Definition_of_delay
 
         public Warehous()
         {
+            _currentYear = 2022;
             _eat = new List<Eat>();
             CreateEat();
         }
@@ -32,8 +33,8 @@ namespace Definition_of_delay
                 eat.ShowInfo();
         }
 
-        public List<Eat> CheckExpirationDate()
-        {           
+        public List<Eat> CheckAndReturnExpirationDate()
+        {
             var suitableEat = _eat.Where(eat => eat.ExpirationDate + eat.YearProduction <= _currentYear).ToList();
             return suitableEat;
         }
@@ -47,10 +48,13 @@ namespace Definition_of_delay
                 Console.Write($"Осталось {_currentYear - (eat.ExpirationDate + eat.YearProduction)} лет до истечения срока годности.  ");
                 eat.ShowInfo();
             }
+
+            if (list.Count == 0)
+                Console.WriteLine("Пригодной еды нету");
         }
 
         private void CreateEat()
-        {           
+        {
             AddEatToList(10, "Суровая", 40);
             AddEatToList(7, "Деревенская", 14);
             AddEatToList(16, "Элитная", 42);
@@ -70,8 +74,8 @@ namespace Definition_of_delay
         private string _name;
         private Random _random;
 
-        public int YearProduction { get;private set; }
-        public int ExpirationDate { get;private set; }
+        public int YearProduction { get; private set; }
+        public int ExpirationDate { get; private set; }
 
         public Eat(string name, int expirationTime)
         {
@@ -93,5 +97,5 @@ namespace Definition_of_delay
 
             YearProduction = _random.Next(minYearCount, maxYearCount);
         }
-    }    
+    }
 }
