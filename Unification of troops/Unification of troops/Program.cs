@@ -7,8 +7,85 @@ namespace Unification_of_troops
     internal class Program
     {
         static void Main(string[] args)
+        {   
+            Battalion battalion = new Battalion();
+            battalion.ShowAllSoldiers();
+            battalion.TransferOfSoldiers();
+            battalion.ShowAllSoldiers();
+        }
+    }
+
+    class Battalion
+    {
+        private List<Soldier> _division1;
+        private List<Soldier> _division2;
+
+        public Battalion()
         {
-            Console.WriteLine("Hello World!");
+            _division1 = CreateAndReturnList(10);
+            _division2 = CreateAndReturnList(15);
+        }
+
+        public void TransferOfSoldiers()
+        {
+            char transferIndex = 'Б';
+            var resul = _division1.Where(soldier => soldier.Surname.StartsWith(transferIndex)).Union(_division2).ToList();
+
+            _division2 = resul;
+
+            for (int i = 0; i < _division1.Count; i++)
+            {
+                if (_division1[i].Surname.StartsWith(transferIndex))
+                {
+                    _division1.RemoveAt(i);
+                }
+            }                      
+        }
+
+        public void ShowAllSoldiers()
+        {
+            Console.WriteLine("1");
+
+            foreach (var item in _division1)          
+                item.ShowINfo();
+            
+            Console.WriteLine("2");
+
+            foreach (var item in _division2)
+                item.ShowINfo();
+        }
+
+        private List<Soldier> CreateAndReturnList(int numberOfSoldiers)
+        {
+            List<Soldier> soldiers = new List<Soldier>();
+
+            for (int i = 0; i < numberOfSoldiers; i++)
+            {
+                soldiers.Add(new Soldier());
+            }
+
+            return soldiers;
+        }
+    }
+
+    class Soldier
+    {
+        private SurnameDatabase _surnameDatabase;
+        private NameDatabase _nameDatabase;
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+
+        public Soldier()
+        {
+            _nameDatabase = new NameDatabase();
+            Name = _nameDatabase.ReturnName();
+            _surnameDatabase = new SurnameDatabase();
+            Surname = _surnameDatabase.ReturnSurname();
+        }
+
+        public void ShowINfo()
+        {
+            Console.WriteLine($"{Name} - {Surname}");
         }
     }
 
@@ -21,6 +98,7 @@ namespace Unification_of_troops
         {
             _surnames = new List<string>();
             _random = new Random();
+            AddSurnameToList();
         }
 
         public string ReturnSurname()
@@ -31,17 +109,17 @@ namespace Unification_of_troops
 
         private void AddSurnameToList()
         {
-            _surnames.Add("Петров");
-            _surnames.Add("Иванов");
+            _surnames.Add("Бетров");
+            _surnames.Add("Бванов");
             _surnames.Add("Горячий");
             _surnames.Add("Холодный");
             _surnames.Add("Лапшунов");
             _surnames.Add("Анпилогов");
             _surnames.Add("Дарожкин");
             _surnames.Add("Дроздов");
-            _surnames.Add("Коленин");
+            _surnames.Add("Боленин");
             _surnames.Add("Прядкин");
-            _surnames.Add("Маголин");
+            _surnames.Add("Баголин");
             _surnames.Add("Семашко");
             _surnames.Add("Николаев");
             _surnames.Add("Савицкий");
@@ -90,4 +168,5 @@ namespace Unification_of_troops
             _names.Add("Анна");
         }
     }
+
 }

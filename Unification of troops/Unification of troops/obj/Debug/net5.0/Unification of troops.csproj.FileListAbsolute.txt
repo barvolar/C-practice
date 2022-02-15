@@ -1,0 +1,16 @@
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\Unification of troops.exe
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\Unification of troops.deps.json
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\Unification of troops.runtimeconfig.json
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\Unification of troops.runtimeconfig.dev.json
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\Unification of troops.dll
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\ref\Unification of troops.dll
+E:\Repositor\Unification of troops\Unification of troops\bin\Debug\net5.0\Unification of troops.pdb
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.csproj.AssemblyReference.cache
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.AssemblyInfoInputs.cache
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.AssemblyInfo.cs
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.csproj.CoreCompileInputs.cache
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.dll
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\ref\Unification of troops.dll
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.pdb
+E:\Repositor\Unification of troops\Unification of troops\obj\Debug\net5.0\Unification of troops.genruntimeconfig.cache
