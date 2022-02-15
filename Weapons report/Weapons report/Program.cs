@@ -93,7 +93,7 @@ namespace Weapons_report
 
         public void ShowNameAndRank()
         {
-            Console.WriteLine($"{Name} звание {Rank}");
+            Console.WriteLine($"{Name} звание {Rank} срок службы {PeriodOfService} мес.");
         }
 
         private void CreatePeriodOfService()
