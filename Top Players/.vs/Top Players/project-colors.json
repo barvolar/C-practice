@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "33a9c739-4494-470d-abf9-d85465862b15": {
+      "ProjectGuid": "33a9c739-4494-470d-abf9-d85465862b15",
+      "DisplayName": "Top Players",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
