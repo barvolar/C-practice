@@ -1,0 +1,16 @@
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\Amnesty.exe
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\Amnesty.deps.json
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\Amnesty.runtimeconfig.json
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\Amnesty.runtimeconfig.dev.json
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\Amnesty.dll
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\ref\Amnesty.dll
+E:\Repositor\Amnesty\Amnesty\bin\Debug\net5.0\Amnesty.pdb
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.csproj.AssemblyReference.cache
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.AssemblyInfoInputs.cache
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.AssemblyInfo.cs
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.csproj.CoreCompileInputs.cache
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.dll
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\ref\Amnesty.dll
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.pdb
+E:\Repositor\Amnesty\Amnesty\obj\Debug\net5.0\Amnesty.genruntimeconfig.cache
