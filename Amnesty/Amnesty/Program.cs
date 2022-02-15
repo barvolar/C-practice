@@ -10,11 +10,13 @@ namespace Amnesty
         {
             Jail jail = new Jail();
             jail.ShowInfo();
-            jail.ExecutionAmnesty();
+
+            Console.WriteLine("Для проведения амнистии нажмите любую кнопку");
+
             Console.ReadKey();
             Console.Clear();
+            jail.ExecutionAmnesty();
             jail.ShowInfo();
-
         }
     }
 
@@ -52,9 +54,7 @@ namespace Amnesty
             {
                 _prisoners.Add(new Prisoner());
             }
-        }
-
-        
+        }       
     }
 
     class Prisoner
@@ -151,7 +151,3 @@ namespace Amnesty
         }
     }
 }
-//В нашей великой стране Арстоцка произошла амнистия!
-//Всех людей, заключенных за преступление "Антиправительственное", следует исключить из списка заключенных.
-//Есть список заключенных, каждый заключенный состоит из полей: ФИО, преступление.
-//Вывести список до амнистии и после.
