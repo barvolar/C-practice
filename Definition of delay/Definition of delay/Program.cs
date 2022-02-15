@@ -10,13 +10,14 @@ namespace Definition_of_delay
         {
             Warehous warehous = new Warehous();
             warehous.ShowAllEat();
-            warehous.CheckingExpirationDate();
+            warehous.ShowSuitableEat(warehous.CheckExpirationDate());
         }
     }
 
     class Warehous
     {
         private List<Eat> _eat;
+        private int _currentYear;
 
         public Warehous()
         {
@@ -31,17 +32,19 @@ namespace Definition_of_delay
                 eat.ShowInfo();
         }
 
-        public void CheckingExpirationDate()
+        public List<Eat> CheckExpirationDate()
+        {           
+            var suitableEat = _eat.Where(eat => eat.ExpirationDate + eat.YearProduction <= _currentYear).ToList();
+            return suitableEat;
+        }
+
+        public void ShowSuitableEat(List<Eat> list)
         {
-            int currentYear = 2022;
-
-            var suitableEat = _eat.Where(eat => eat.ExpirationDate + eat.YearProduction <= currentYear);
-
             Console.WriteLine("Пригодная для употребления еда");
 
-            foreach (var eat in suitableEat)
+            foreach (var eat in list)
             {
-                Console.Write($"Осталось {currentYear-(eat.ExpirationDate+eat.YearProduction)} лет до истечения срока годности.  ");
+                Console.Write($"Осталось {_currentYear - (eat.ExpirationDate + eat.YearProduction)} лет до истечения срока годности.  ");
                 eat.ShowInfo();
             }
         }

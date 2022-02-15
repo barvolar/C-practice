@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "47fbda8f-20b5-4f52-a7a1-da04801bdda2": {
+      "ProjectGuid": "47fbda8f-20b5-4f52-a7a1-da04801bdda2",
+      "DisplayName": "Weapons report",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
