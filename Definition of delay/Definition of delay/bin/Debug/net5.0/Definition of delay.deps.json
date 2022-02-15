@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Definition of delay/1.0.0": {
+        "runtime": {
+          "Definition of delay.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Definition of delay/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

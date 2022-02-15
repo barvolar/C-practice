@@ -1,0 +1,16 @@
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\Definition of delay.exe
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\Definition of delay.deps.json
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\Definition of delay.runtimeconfig.json
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\Definition of delay.runtimeconfig.dev.json
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\Definition of delay.dll
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\ref\Definition of delay.dll
+E:\Repositor\Definition of delay\Definition of delay\bin\Debug\net5.0\Definition of delay.pdb
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.csproj.AssemblyReference.cache
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.AssemblyInfoInputs.cache
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.AssemblyInfo.cs
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.csproj.CoreCompileInputs.cache
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.dll
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\ref\Definition of delay.dll
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.pdb
+E:\Repositor\Definition of delay\Definition of delay\obj\Debug\net5.0\Definition of delay.genruntimeconfig.cache
