@@ -7,7 +7,7 @@ namespace Unification_of_troops
     internal class Program
     {
         static void Main(string[] args)
-        {   
+        {
             Battalion battalion = new Battalion();
             battalion.ShowAllSoldiers();
             battalion.TransferOfSoldiers();
@@ -29,30 +29,20 @@ namespace Unification_of_troops
         public void TransferOfSoldiers()
         {
             char transferIndex = 'Б';
-            var resul = _division1.Where(soldier => soldier.Surname.StartsWith(transferIndex)).Union(_division2).ToList();
-
-            _division2 = resul;
-
-            for (int i = 0; i < _division1.Count; i++)
-            {
-                if (_division1[i].Surname.StartsWith(transferIndex))
-                {
-                    _division1.RemoveAt(i);
-                }
-            }                      
+            var tempCollection = _division1.Where(soldier => soldier.Surname.StartsWith(transferIndex)).Concat(_division2);
+            _division1 = _division1.Except(tempCollection).ToList();
+            _division2 = tempCollection.ToList();
         }
 
         public void ShowAllSoldiers()
         {
-            Console.WriteLine("1");
+            Console.WriteLine("1 Div\n=========");
+            foreach (var soldier in _division1)
+                soldier.ShowInfo();
 
-            foreach (var item in _division1)          
-                item.ShowINfo();
-            
-            Console.WriteLine("2");
-
-            foreach (var item in _division2)
-                item.ShowINfo();
+            Console.WriteLine("2 Div\n=========");
+            foreach (var soldier in _division2)
+                soldier.ShowInfo();
         }
 
         private List<Soldier> CreateAndReturnList(int numberOfSoldiers)
@@ -83,7 +73,7 @@ namespace Unification_of_troops
             Surname = _surnameDatabase.ReturnSurname();
         }
 
-        public void ShowINfo()
+        public void ShowInfo()
         {
             Console.WriteLine($"{Name} - {Surname}");
         }
@@ -168,5 +158,4 @@ namespace Unification_of_troops
             _names.Add("Анна");
         }
     }
-
 }
