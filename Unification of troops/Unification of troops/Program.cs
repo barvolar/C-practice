@@ -28,20 +28,23 @@ namespace Unification_of_troops
 
         public void TransferOfSoldiers()
         {
-            char transferIndex = 'Б';
-            var tempCollection = _division1.Where(soldier => soldier.Surname.StartsWith(transferIndex)).Concat(_division2);
-            _division1 = _division1.Except(tempCollection).ToList();
-            _division2 = tempCollection.ToList();
+            char transferIndex = 'Б';          
+            _division2 = _division1.Where(soldier => soldier.Surname.StartsWith(transferIndex)).Concat(_division2).ToList();
+            _division1 = _division1.Except(_division2).ToList();
         }
 
         public void ShowAllSoldiers()
         {
             Console.WriteLine("1 Div\n=========");
-            foreach (var soldier in _division1)
-                soldier.ShowInfo();
+            ShowInfo(_division1);
 
             Console.WriteLine("2 Div\n=========");
-            foreach (var soldier in _division2)
+            ShowInfo(_division2);
+        }
+
+        private void ShowInfo(List<Soldier> list)
+        {
+            foreach (var soldier in list)
                 soldier.ShowInfo();
         }
 
@@ -59,18 +62,17 @@ namespace Unification_of_troops
     }
 
     class Soldier
-    {
-        private SurnameDatabase _surnameDatabase;
-        private NameDatabase _nameDatabase;
+    {       
+        private NameAndSurnameDatabase _nameAndSurnameDatabase;
+
         public string Name { get; private set; }
         public string Surname { get; private set; }
 
         public Soldier()
         {
-            _nameDatabase = new NameDatabase();
-            Name = _nameDatabase.ReturnName();
-            _surnameDatabase = new SurnameDatabase();
-            Surname = _surnameDatabase.ReturnSurname();
+            _nameAndSurnameDatabase = new NameAndSurnameDatabase();
+            Name = _nameAndSurnameDatabase.ReturnName();
+            Surname = _nameAndSurnameDatabase.ReturnSurname();
         }
 
         public void ShowInfo()
@@ -79,22 +81,54 @@ namespace Unification_of_troops
         }
     }
 
-    class SurnameDatabase
+   
+    class NameAndSurnameDatabase
     {
+        private List<string> _names;
         private List<string> _surnames;
         private Random _random;
 
-        public SurnameDatabase()
+        public NameAndSurnameDatabase()
         {
-            _surnames = new List<string>();
+            _names = new List<string>();
+            _surnames= new List<string>();
             _random = new Random();
+            AddNamesToList();
             AddSurnameToList();
+        }
+
+        public string ReturnName()
+        {
+            int nameIndex = _random.Next(_names.Count);
+            return _names[nameIndex];
         }
 
         public string ReturnSurname()
         {
             int indexSurname = _random.Next(_surnames.Count);
             return _surnames[indexSurname];
+        }
+
+        private void AddNamesToList()
+        {
+            _names.Add("Дмитрий");
+            _names.Add("Виктор");
+            _names.Add("Константин");
+            _names.Add("Александр");
+            _names.Add("Алексей");
+            _names.Add("Виталий");
+            _names.Add("Екатерина");
+            _names.Add("Ольга");
+            _names.Add("Елена");
+            _names.Add("Аркадий");
+            _names.Add("Лиза");
+            _names.Add("Иван");
+            _names.Add("Георгий");
+            _names.Add("Григорий");
+            _names.Add("Кристина");
+            _names.Add("Наталья");
+            _names.Add("Василий");
+            _names.Add("Анна");
         }
 
         private void AddSurnameToList()
@@ -115,47 +149,6 @@ namespace Unification_of_troops
             _surnames.Add("Савицкий");
             _surnames.Add("Лысенко");
             _surnames.Add("Плеснев");
-        }
-    }
-
-    class NameDatabase
-    {
-        private List<string> _names;
-        private Random _random;
-
-        public NameDatabase()
-        {
-            _names = new List<string>();
-            _random = new Random();
-            Create();
-        }
-
-        public string ReturnName()
-        {
-            int nameIndex = _random.Next(_names.Count);
-            return _names[nameIndex];
-        }
-
-        private void Create()
-        {
-            _names.Add("Дмитрий");
-            _names.Add("Виктор");
-            _names.Add("Константин");
-            _names.Add("Александр");
-            _names.Add("Алексей");
-            _names.Add("Виталий");
-            _names.Add("Екатерина");
-            _names.Add("Ольга");
-            _names.Add("Елена");
-            _names.Add("Аркадий");
-            _names.Add("Лиза");
-            _names.Add("Иван");
-            _names.Add("Георгий");
-            _names.Add("Григорий");
-            _names.Add("Кристина");
-            _names.Add("Наталья");
-            _names.Add("Василий");
-            _names.Add("Анна");
         }
     }
 }
